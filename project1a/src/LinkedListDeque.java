@@ -128,3 +128,5 @@ public class LinkedListDeque<type> {
     }
 
 }
+
+/*Test Github function in IntelliJ*/

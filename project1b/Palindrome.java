@@ -30,9 +30,28 @@ public class Palindrome {
         }
     }
 
+    public static boolean isPalindrome(String word, CharacterComparator cc){
+        Deque<Character> wordsToJudge = new Palindrome().wordToDeque(word);
+        if(wordsToJudge.size() == 0 || wordsToJudge.size() == 1) {
+            return true;
+        }else if(!cc.equalChars(wordsToJudge.get(wordsToJudge.size()), wordsToJudge.get(1))) {
+            return false;
+        }else{
+            wordsToJudge.removeFirst();
+            wordsToJudge.removeLast();
+            String wordString = "";
+            for(int i = 1; i <= wordsToJudge.size(); i++){
+                wordString += wordsToJudge.get(i);
+            }
+            return isPalindrome(wordString, cc);
+        }
+    }
+
+
     public static void main(String[] args){
         Deque<Character> tangjiahao = new Palindrome().wordToDeque("abcdefedcba");
-        boolean result = isPalindrome("");
+        OffByN obo = new OffByN(5);
+        boolean result = isPalindrome("af4ax", obo);//return false.
         if(result == true){
             System.out.println("True");
         }else{
@@ -40,4 +59,5 @@ public class Palindrome {
         }
 
     }
+
 }

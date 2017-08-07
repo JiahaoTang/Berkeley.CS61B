@@ -23,15 +23,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OffByN.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OffByN.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OffByN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25251076">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="e#151#152#0" expanded="true" />
                 <element signature="e#179#180#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PalindromeFinder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PalindromeFinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.09469154">
+              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,6 +74,7 @@
         <option value="$PROJECT_DIR$/OffByOne.java" />
         <option value="$PROJECT_DIR$/OffByN.java" />
         <option value="$PROJECT_DIR$/Palindrome.java" />
+        <option value="$PROJECT_DIR$/PalindromeFinder.java" />
       </list>
     </option>
   </component>
@@ -579,7 +590,7 @@
       <workItem from="1501752929495" duration="159000" />
       <workItem from="1501753132655" duration="6769000" />
       <workItem from="1501779042277" duration="1060000" />
-      <workItem from="1501831134982" duration="2010000" />
+      <workItem from="1501831134982" duration="3241000" />
     </task>
     <servers />
   </component>
@@ -592,7 +603,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10055000" />
+    <option name="totallyTimeSpent" value="11286000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="886" extended-state="7" />
@@ -787,14 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PalindromeFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0415879">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/words.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -861,12 +864,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OffByN.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25251076">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="e#151#152#0" expanded="true" />
             <element signature="e#179#180#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PalindromeFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09469154">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>

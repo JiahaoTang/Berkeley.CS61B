@@ -1,5 +1,6 @@
 package db;
 
+import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.SET;
 
 import java.util.ArrayList;
@@ -80,12 +81,55 @@ public class Table {
                 joinTable.addRow(r);
             }
         }
-        if(this.haveSameColumn(anotherTable)){
 
-            return anotherTable;
-        }else{
+        if(this.haveSameColumn(anotherTable)) {
+            //Initialize a table whose rows have been filtered.
+            Table FilterRowjoinTable = new Table("FilterRowJoinTable");
+            FilterRowjoinTable.addFirstRow(newFirstRow);
+
+            //Filter the specified rows.
+            for(int i = 1; i < joinTable.rowSize; i++) {//i is the index of the row.
+                for(int j = 0; j < joinTable.columnSize; j++) {          //CN is the duplicated Column Name.
+                    for(int k = j + 1; k < joinTable.columnSize; k++) {       //cn is column names of jointable.
+                        String jvalue = joinTable.getRows().get(i).row.get(j);//get the CN column's value in ith row.
+                        String kvalue = joinTable.getRows().get(i).row.get(k);//get the cn column's value in ith row.
+                        if(newColumnName[j]==newColumnName[k] && jvalue.equals(kvalue)) {
+                            FilterRowjoinTable.addRow(joinTable.getRows().get(i));
+                        }
+                    }
+                }
+            }
+
+            //Filter the specified columns.
+            ArrayList<Integer> duplicatedNameIndex = findDuplicatedNameIndex(FilterRowjoinTable);
+
+            //Change the values rows of the table.Integer index:duplicatedNameIndex
+            for(Integer index:duplicatedNameIndex) {
+                for(int i = 0; i < FilterRowjoinTable.rowSize; i++) {
+                    FilterRowjoinTable.getRows().get(i).row.remove((int)index);
+                    FilterRowjoinTable.getRows().get(i).rowSize -= 1;
+                }
+            }
+            FilterRowjoinTable.columnSize -= duplicatedNameIndex.size();
+            return FilterRowjoinTable;
+        }else {
             return joinTable;
         }
+    }
+
+    /**Find the duplicated column names' index.*/
+    public static ArrayList<Integer> findDuplicatedNameIndex(Table T) {
+        ArrayList<Integer> duplicatedNameIndex = new ArrayList<Integer>();
+        for(int i = 0; i < T.firstRow.row.size(); i++) {
+            for(int j = i + 1; j < T.firstRow.row.size(); j++) {
+                String columnNamei = T.firstRow.row.get(i);
+                String columnNamej = T.firstRow.row.get(j);
+                if(columnNamej.equals(columnNamei)){
+                    duplicatedNameIndex.add(j);
+                }
+            }
+        }
+        return duplicatedNameIndex;
     }
 
     /**Combine two arrays of string*/
@@ -101,11 +145,11 @@ public class Table {
      * Return an array of string.*/
     public String[] collectColumnName(Table anotherTable) {
         List<String> columnName = new ArrayList<String>();
-        for(Column c:this.getColumns()) {
-            columnName.add(c.column.get(0));
+        for(String c:this.firstRow.row) {
+            columnName.add(c);
         }
-        for(Column c:anotherTable.getColumns()) {
-            columnName.add(c.column.get(0));
+        for(String c:anotherTable.firstRow.row) {
+            columnName.add(c);
         }
         return columnName.toArray(new String[columnName.size()]);
 

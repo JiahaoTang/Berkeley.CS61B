@@ -67,7 +67,7 @@ public class Table {
     }
 
     /**Join this table with another table.*/
-    public Table joinWith(Table anotherTable, String joinTableName) {
+    public Table joinWith(Table anotherTable) {
         Table joinTable;
         String[] newColumnName = collectColumnName(anotherTable);
         joinTable = new Table("joinTableName");
@@ -133,7 +133,7 @@ public class Table {
     }
 
     /**Combine two arrays of string*/
-    public String[] combineStringArray(String[] str1, String[] str2){
+    private String[] combineStringArray(String[] str1, String[] str2){
         int strlen1 = str1.length;
         int strlen2 = str2.length;
         str1 = Arrays.copyOf(str1, strlen1 + strlen2);
@@ -143,7 +143,7 @@ public class Table {
 
     /**Collect the column names from two tables.
      * Return an array of string.*/
-    public String[] collectColumnName(Table anotherTable) {
+    private String[] collectColumnName(Table anotherTable) {
         List<String> columnName = new ArrayList<String>();
         for(String c:this.firstRow.row) {
             columnName.add(c);
@@ -156,7 +156,7 @@ public class Table {
     }
 
     /**Determine whether two tables have the same column.*/
-    public boolean haveSameColumn(Table anotherTable){
+    private boolean haveSameColumn(Table anotherTable){
         int columnNumber = this.getColumns().size() + anotherTable.getColumns().size();
 
         SET<String> columnName = new SET<String>();

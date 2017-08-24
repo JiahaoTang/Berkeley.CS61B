@@ -27,16 +27,14 @@
         <entry file="file://$PROJECT_DIR$/db/Database.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+              <caret line="123" column="30" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="30" />
               <folding>
-                <element signature="method#createTable#0;class#Database#0" expanded="false" />
                 <element signature="method#createNewTable#0;class#Database#0" expanded="false" />
                 <element signature="method#loadTable#0;class#Database#0" expanded="false" />
                 <element signature="method#storeTable#0;class#Database#0" expanded="false" />
                 <element signature="method#dropTable#0;class#Database#0" expanded="false" />
                 <element signature="method#insertRow#0;class#Database#0" expanded="false" />
                 <element signature="method#printTable#0;class#Database#0" expanded="false" />
-                <element signature="method#select#0;class#Database#0" expanded="false" />
                 <element signature="method#select#1;class#Database#0" expanded="false" />
               </folding>
             </state>
@@ -67,12 +65,13 @@
         <entry file="file://$PROJECT_DIR$/db/Table.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+              <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getColumns#0;class#Table#0" expanded="false" />
                 <element signature="method#addFirstRow#0;class#Table#0" expanded="false" />
                 <element signature="method#addRow#0;class#Table#0" expanded="false" />
+                <element signature="method#printTable#0;class#Table#0" expanded="false" />
                 <element signature="method#findDuplicatedNameIndex#0;class#Table#0" expanded="false" />
                 <element signature="method#combineStringArray#0;class#Table#0" expanded="false" />
                 <element signature="docComment;method#collectColumnName#0;class#Table#0" expanded="false" />
@@ -83,11 +82,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Parse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="108" column="26" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33392227">
-              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.48233217">
+              <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,11 +130,11 @@
         <option value="$PROJECT_DIR$/examples/p2/codeSamples/NestedTestClasses.java" />
         <option value="$PROJECT_DIR$/db/Row.java" />
         <option value="$PROJECT_DIR$/examples/students.tbl" />
-        <option value="$PROJECT_DIR$/db/Database.java" />
         <option value="$PROJECT_DIR$/Main.java" />
         <option value="$PROJECT_DIR$/examples/t1.tbl" />
-        <option value="$PROJECT_DIR$/db/test.java" />
         <option value="$PROJECT_DIR$/db/Table.java" />
+        <option value="$PROJECT_DIR$/db/Database.java" />
+        <option value="$PROJECT_DIR$/db/test.java" />
       </list>
     </option>
   </component>
@@ -172,6 +181,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -238,9 +248,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -724,7 +733,10 @@
       <workItem from="1503112263503" duration="1377000" />
       <workItem from="1503114083578" duration="3274000" />
       <workItem from="1503117428149" duration="5000" />
-      <workItem from="1503117520835" duration="8000" />
+      <workItem from="1503117520835" duration="161000" />
+      <workItem from="1503148911463" duration="2399000" />
+      <workItem from="1503199461910" duration="4611000" />
+      <workItem from="1503602526599" duration="88000" />
     </task>
     <servers />
   </component>
@@ -737,7 +749,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65432000" />
+    <option name="totallyTimeSpent" value="72683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -753,13 +765,13 @@
       <window_info id="Style Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13825215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17170954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49243698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8013468" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27823693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -787,18 +799,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/db/test.java</url>
-          <line>35</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="39" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -822,14 +826,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
           <folding>
-            <element signature="method#createTable#0;class#Database#0" expanded="false" />
             <element signature="method#createNewTable#0;class#Database#0" expanded="false" />
             <element signature="method#loadTable#0;class#Database#0" expanded="false" />
             <element signature="method#storeTable#0;class#Database#0" expanded="false" />
             <element signature="method#dropTable#0;class#Database#0" expanded="false" />
             <element signature="method#insertRow#0;class#Database#0" expanded="false" />
             <element signature="method#printTable#0;class#Database#0" expanded="false" />
-            <element signature="method#select#0;class#Database#0" expanded="false" />
             <element signature="method#select#1;class#Database#0" expanded="false" />
           </folding>
         </state>
@@ -860,6 +862,7 @@
             <element signature="method#getColumns#0;class#Table#0" expanded="false" />
             <element signature="method#addFirstRow#0;class#Table#0" expanded="false" />
             <element signature="method#addRow#0;class#Table#0" expanded="false" />
+            <element signature="method#printTable#0;class#Table#0" expanded="false" />
             <element signature="method#findDuplicatedNameIndex#0;class#Table#0" expanded="false" />
             <element signature="method#combineStringArray#0;class#Table#0" expanded="false" />
             <element signature="docComment;method#collectColumnName#0;class#Table#0" expanded="false" />
@@ -884,14 +887,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
           <folding>
-            <element signature="method#createTable#0;class#Database#0" expanded="false" />
             <element signature="method#createNewTable#0;class#Database#0" expanded="false" />
             <element signature="method#loadTable#0;class#Database#0" expanded="false" />
             <element signature="method#storeTable#0;class#Database#0" expanded="false" />
             <element signature="method#dropTable#0;class#Database#0" expanded="false" />
             <element signature="method#insertRow#0;class#Database#0" expanded="false" />
             <element signature="method#printTable#0;class#Database#0" expanded="false" />
-            <element signature="method#select#0;class#Database#0" expanded="false" />
             <element signature="method#select#1;class#Database#0" expanded="false" />
           </folding>
         </state>
@@ -922,6 +923,7 @@
             <element signature="method#getColumns#0;class#Table#0" expanded="false" />
             <element signature="method#addFirstRow#0;class#Table#0" expanded="false" />
             <element signature="method#addRow#0;class#Table#0" expanded="false" />
+            <element signature="method#printTable#0;class#Table#0" expanded="false" />
             <element signature="method#findDuplicatedNameIndex#0;class#Table#0" expanded="false" />
             <element signature="method#combineStringArray#0;class#Table#0" expanded="false" />
             <element signature="docComment;method#collectColumnName#0;class#Table#0" expanded="false" />
@@ -946,14 +948,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="114" column="39" selection-start-line="114" selection-start-column="39" selection-end-line="114" selection-end-column="39" />
           <folding>
-            <element signature="method#createTable#0;class#Database#0" expanded="false" />
             <element signature="method#createNewTable#0;class#Database#0" expanded="false" />
             <element signature="method#loadTable#0;class#Database#0" expanded="false" />
             <element signature="method#storeTable#0;class#Database#0" expanded="false" />
             <element signature="method#dropTable#0;class#Database#0" expanded="false" />
             <element signature="method#insertRow#0;class#Database#0" expanded="false" />
             <element signature="method#printTable#0;class#Database#0" expanded="false" />
-            <element signature="method#select#0;class#Database#0" expanded="false" />
             <element signature="method#select#1;class#Database#0" expanded="false" />
           </folding>
         </state>
@@ -984,6 +984,7 @@
             <element signature="method#getColumns#0;class#Table#0" expanded="false" />
             <element signature="method#addFirstRow#0;class#Table#0" expanded="false" />
             <element signature="method#addRow#0;class#Table#0" expanded="false" />
+            <element signature="method#printTable#0;class#Table#0" expanded="false" />
             <element signature="method#findDuplicatedNameIndex#0;class#Table#0" expanded="false" />
             <element signature="method#combineStringArray#0;class#Table#0" expanded="false" />
             <element signature="docComment;method#collectColumnName#0;class#Table#0" expanded="false" />
@@ -1033,6 +1034,7 @@
             <element signature="method#getColumns#0;class#Table#0" expanded="false" />
             <element signature="method#addFirstRow#0;class#Table#0" expanded="false" />
             <element signature="method#addRow#0;class#Table#0" expanded="false" />
+            <element signature="method#printTable#0;class#Table#0" expanded="false" />
             <element signature="method#findDuplicatedNameIndex#0;class#Table#0" expanded="false" />
             <element signature="method#combineStringArray#0;class#Table#0" expanded="false" />
             <element signature="docComment;method#collectColumnName#0;class#Table#0" expanded="false" />
@@ -1047,14 +1049,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#createTable#0;class#Database#0" expanded="false" />
             <element signature="method#createNewTable#0;class#Database#0" expanded="false" />
             <element signature="method#loadTable#0;class#Database#0" expanded="false" />
             <element signature="method#storeTable#0;class#Database#0" expanded="false" />
             <element signature="method#dropTable#0;class#Database#0" expanded="false" />
             <element signature="method#insertRow#0;class#Database#0" expanded="false" />
             <element signature="method#printTable#0;class#Database#0" expanded="false" />
-            <element signature="method#select#0;class#Database#0" expanded="false" />
             <element signature="method#select#1;class#Database#0" expanded="false" />
           </folding>
         </state>
@@ -1069,6 +1069,7 @@
             <element signature="method#getColumns#0;class#Table#0" expanded="false" />
             <element signature="method#addFirstRow#0;class#Table#0" expanded="false" />
             <element signature="method#addRow#0;class#Table#0" expanded="false" />
+            <element signature="method#printTable#0;class#Table#0" expanded="false" />
             <element signature="method#findDuplicatedNameIndex#0;class#Table#0" expanded="false" />
             <element signature="method#combineStringArray#0;class#Table#0" expanded="false" />
             <element signature="docComment;method#collectColumnName#0;class#Table#0" expanded="false" />
@@ -1083,14 +1084,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#createTable#0;class#Database#0" expanded="false" />
             <element signature="method#createNewTable#0;class#Database#0" expanded="false" />
             <element signature="method#loadTable#0;class#Database#0" expanded="false" />
             <element signature="method#storeTable#0;class#Database#0" expanded="false" />
             <element signature="method#dropTable#0;class#Database#0" expanded="false" />
             <element signature="method#insertRow#0;class#Database#0" expanded="false" />
             <element signature="method#printTable#0;class#Database#0" expanded="false" />
-            <element signature="method#select#0;class#Database#0" expanded="false" />
             <element signature="method#select#1;class#Database#0" expanded="false" />
           </folding>
         </state>
@@ -1105,6 +1104,7 @@
             <element signature="method#getColumns#0;class#Table#0" expanded="false" />
             <element signature="method#addFirstRow#0;class#Table#0" expanded="false" />
             <element signature="method#addRow#0;class#Table#0" expanded="false" />
+            <element signature="method#printTable#0;class#Table#0" expanded="false" />
             <element signature="method#findDuplicatedNameIndex#0;class#Table#0" expanded="false" />
             <element signature="method#combineStringArray#0;class#Table#0" expanded="false" />
             <element signature="docComment;method#collectColumnName#0;class#Table#0" expanded="false" />
@@ -1119,14 +1119,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#createTable#0;class#Database#0" expanded="false" />
             <element signature="method#createNewTable#0;class#Database#0" expanded="false" />
             <element signature="method#loadTable#0;class#Database#0" expanded="false" />
             <element signature="method#storeTable#0;class#Database#0" expanded="false" />
             <element signature="method#dropTable#0;class#Database#0" expanded="false" />
             <element signature="method#insertRow#0;class#Database#0" expanded="false" />
             <element signature="method#printTable#0;class#Database#0" expanded="false" />
-            <element signature="method#select#0;class#Database#0" expanded="false" />
             <element signature="method#select#1;class#Database#0" expanded="false" />
           </folding>
         </state>
@@ -1162,6 +1160,7 @@
             <element signature="method#getColumns#0;class#Table#0" expanded="false" />
             <element signature="method#addFirstRow#0;class#Table#0" expanded="false" />
             <element signature="method#addRow#0;class#Table#0" expanded="false" />
+            <element signature="method#printTable#0;class#Table#0" expanded="false" />
             <element signature="method#findDuplicatedNameIndex#0;class#Table#0" expanded="false" />
             <element signature="method#combineStringArray#0;class#Table#0" expanded="false" />
             <element signature="docComment;method#collectColumnName#0;class#Table#0" expanded="false" />
@@ -1176,14 +1175,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
           <folding>
-            <element signature="method#createTable#0;class#Database#0" expanded="false" />
             <element signature="method#createNewTable#0;class#Database#0" expanded="false" />
             <element signature="method#loadTable#0;class#Database#0" expanded="false" />
             <element signature="method#storeTable#0;class#Database#0" expanded="false" />
             <element signature="method#dropTable#0;class#Database#0" expanded="false" />
             <element signature="method#insertRow#0;class#Database#0" expanded="false" />
             <element signature="method#printTable#0;class#Database#0" expanded="false" />
-            <element signature="method#select#0;class#Database#0" expanded="false" />
             <element signature="method#select#1;class#Database#0" expanded="false" />
           </folding>
         </state>
@@ -1222,13 +1219,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43548387">
           <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="55" selection-start-line="112" selection-start-column="55" selection-end-line="112" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -1302,6 +1292,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/Row.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="26" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getColumns#0;class#Table#0" expanded="false" />
+            <element signature="method#addFirstRow#0;class#Table#0" expanded="false" />
+            <element signature="method#addRow#0;class#Table#0" expanded="false" />
+            <element signature="method#printTable#0;class#Table#0" expanded="false" />
+            <element signature="method#findDuplicatedNameIndex#0;class#Table#0" expanded="false" />
+            <element signature="method#combineStringArray#0;class#Table#0" expanded="false" />
+            <element signature="docComment;method#collectColumnName#0;class#Table#0" expanded="false" />
+            <element signature="method#collectColumnName#0;class#Table#0" expanded="false" />
+            <element signature="method#haveSameColumn#0;class#Table#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1313,51 +1338,23 @@
     <entry file="file://$PROJECT_DIR$/db/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+          <caret line="123" column="30" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="30" />
           <folding>
-            <element signature="method#createTable#0;class#Database#0" expanded="false" />
             <element signature="method#createNewTable#0;class#Database#0" expanded="false" />
             <element signature="method#loadTable#0;class#Database#0" expanded="false" />
             <element signature="method#storeTable#0;class#Database#0" expanded="false" />
             <element signature="method#dropTable#0;class#Database#0" expanded="false" />
             <element signature="method#insertRow#0;class#Database#0" expanded="false" />
             <element signature="method#printTable#0;class#Database#0" expanded="false" />
-            <element signature="method#select#0;class#Database#0" expanded="false" />
             <element signature="method#select#1;class#Database#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/Row.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getColumns#0;class#Table#0" expanded="false" />
-            <element signature="method#addFirstRow#0;class#Table#0" expanded="false" />
-            <element signature="method#addRow#0;class#Table#0" expanded="false" />
-            <element signature="method#findDuplicatedNameIndex#0;class#Table#0" expanded="false" />
-            <element signature="method#combineStringArray#0;class#Table#0" expanded="false" />
-            <element signature="docComment;method#collectColumnName#0;class#Table#0" expanded="false" />
-            <element signature="method#collectColumnName#0;class#Table#0" expanded="false" />
-            <element signature="method#haveSameColumn#0;class#Table#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33392227">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.48233217">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -75,7 +75,7 @@ public class Database {
             System.err.printf("Malformed query: %s\n", query);
         }
     }
-
+    //Finished
     public void createTable(String expr) {
         Matcher m;
         if ((m = CREATE_NEW.matcher(expr)).matches()) {                 //Match the command line which is to create a new table.
@@ -86,7 +86,7 @@ public class Database {
             System.err.printf("Malformed create: %s\n", expr);
         }
     }
-
+    //Finished
     public void createNewTable(String name, String[] cols) {
         StringJoiner joiner = new StringJoiner(", ");
         for (int i = 0; i < cols.length-1; i++) {
@@ -107,11 +107,37 @@ public class Database {
         System.out.printf("You are trying to create a table named %s with the columns %s\n", name, colSentence);
     }
 
-    private static void createSelectedTable(String name, String exprs, String tables, String conds) {
+    //select <column expr0>,<column expr1>,... from <table0>,<table1>,... where <cond0> and <cond1> and ...
+    private void createSelectedTable(String name, String exprs, String tables, String conds) {
         System.out.printf("You are trying to create a table named %s by selecting these expressions:" +
                 " '%s' from the join of these tables: '%s', filtered by these conditions: '%s'\n", name, exprs, tables, conds);
+        String[] exprsArray = exprs.split(",");
+        String[] tablesNames = tables.split(",");
+        String[] condsArray = conds.split(" and ");
+        //Merge the tables.
+        ArrayList<Table> tablesArray = collectTablesArray(tablesNames);
+        Table unSelectedTable = new Table("unSelectedTable");
+        for(Table t:tablesArray) {
+            unSelectedTable.joinWith(t);
+        }
+        //Selected columns.
+        //Table SelectedTables =
     }
 
+    //Used in createSelectedTable.
+    private ArrayList<Table> collectTablesArray(String[] tableNameString) {
+        ArrayList<Table> TableArray = new ArrayList<Table>();
+        for(int i = 0; i < tableList.size(); i ++) {
+            for(String name:tableNameString){
+                if(tableList.get(i).Name == name) {
+                    TableArray.add(tableList.get(i));
+                }
+            }
+        }
+        return TableArray;
+    }
+
+    //Finished
     public void loadTable(String name) {
         System.out.printf("You are trying to load the table named %s\n", name);
 
@@ -127,7 +153,7 @@ public class Database {
         tableList.add(newTable);
         System.out.println(tableList.size());
     }
-
+    //Finished
     public void storeTable(String name) {
 
         System.out.printf("You are trying to store the table named %s\n", name);
@@ -154,7 +180,7 @@ public class Database {
             }
         }
     }
-
+    //Finished
     public void dropTable(String name) {
         System.out.printf("You are trying to drop the table named %s\n", name);
         //Find the table in tableList and remove it according to it name and index.
@@ -166,7 +192,7 @@ public class Database {
             }
         }
     }
-
+    //Finished
     public void insertRow(String expr) {
         Matcher m = INSERT_CLS.matcher(expr);
         if (!m.matches()) {
@@ -190,7 +216,7 @@ public class Database {
             }
         }
     }
-
+    //Finished
     public void printTable(String name) {
         System.out.printf("You are trying to print the table named %s\n", name);
         boolean printCheck = false;

@@ -2,6 +2,7 @@ package lab9;
 
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -42,7 +43,16 @@ public class MyHashMap<Key, Value> {
     }
 
     private void resize(int x){
-
+        MyHashMap<Key, Value> newSq;
+        newSq = new MyHashMap<Key, Value>(x);
+        for(int i = 0; i < blockNum; i++){
+            for(Key k:sq[i].keys()){
+                newSq.put(k, sq[i].get(k));
+            }
+        }
+        this.blockNum = newSq.blockNum;
+        this.pairSize = newSq.pairSize;
+        this.sq = newSq.sq;
     }
 
     public int hash(Key k) {

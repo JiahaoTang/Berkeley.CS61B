@@ -24,7 +24,7 @@ public class Percolation {
 
     //Transfer coordinate into integer.
     private int xyTo1D(int x, int y){
-        return (x + 1) * (y + 1) - 1;
+        return N * x + y;
     }
     //Open site (row, col) if it is not open.
     public void open(int row, int col){
@@ -33,10 +33,10 @@ public class Percolation {
         else{
             siteNumber += 1;
             openFlag[xyTo1D(row, col)] = true;
-            if(isOpen(row - 1, col)||row - 1 > 0) N_grid.union(xyTo1D(row - 1, col), xyTo1D(row, col));
-            if(isOpen(row + 1, col)||row + 1 < N) N_grid.union(xyTo1D(row - 1, col), xyTo1D(row, col));
-            if(isOpen(row, col - 1)||col - 1 > 0) N_grid.union(xyTo1D(row, col - 1), xyTo1D(row, col));
-            if(isOpen(row, col + 1)||col + 1 < N) N_grid.union(xyTo1D(row, col + 1), xyTo1D(row, col));
+            if(row - 1 > 0&&isOpen(row - 1, col)) N_grid.union(xyTo1D(row - 1, col), xyTo1D(row, col));
+            if(row + 1 < N&&isOpen(row + 1, col)) N_grid.union(xyTo1D(row - 1, col), xyTo1D(row, col));
+            if(col - 1 > 0&&isOpen(row, col - 1)) N_grid.union(xyTo1D(row, col - 1), xyTo1D(row, col));
+            if(col + 1 < N&&isOpen(row, col + 1)) N_grid.union(xyTo1D(row, col + 1), xyTo1D(row, col));
             if(row == 0) N_grid.union(xyTo1D(row, col), N * N - 1);
             if(row == N - 1) N_grid.union(xyTo1D(row, col), N * N);
         }
@@ -74,5 +74,11 @@ public class Percolation {
         N55.open(2, 3);
         N55.open(0, 2);
         N55.open(1, 2);
+        N55.open(4, 0);
+        //N55.open(4, 4);
+        System.out.print("isFull? ");
+        System.out.println(N55.isFull(0, 2));
+        System.out.print("percolatre: ");
+        System.out.println(N55.percolates());
     }
 }                       

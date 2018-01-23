@@ -1,5 +1,7 @@
 import edu.princeton.cs.algs4.Queue;
 
+import java.util.Iterator;
+
 public class QuickSort {
     /**
      * Returns a new queue that contains the given queues catenated together.
@@ -48,12 +50,45 @@ public class QuickSort {
             Queue<Item> unsorted, Item pivot,
             Queue<Item> less, Queue<Item> equal, Queue<Item> greater) {
         // Your code here!
+        Iterator<Item> iter = unsorted.iterator();
+        while(iter.hasNext()){
+            Item item = iter.next();
+            if(item.compareTo(pivot) > 0) greater.enqueue(item);
+            if(item.compareTo(pivot) < 0) less.enqueue(item);
+            if(item.compareTo(pivot) == 0) equal.enqueue(item);
+        }
     }
 
     /** Returns a Queue that contains the given items sorted from least to greatest. */
     public static <Item extends Comparable> Queue<Item> quickSort(
             Queue<Item> items) {
         // Your code here!
-        return items;
+        if(items.size() == 1 || items.size() == 0) return items;
+        Queue<Item> less = new Queue<>();
+        Queue<Item> equal = new Queue<>();
+        Queue<Item> greater = new Queue<>();
+        Item pivot = QuickSort.getRandomItem(items);
+        QuickSort.partition(items, pivot, less, equal, greater);
+        //Recurse quickSort method.
+        less = QuickSort.quickSort(less);
+        Queue<Item> result = QuickSort.catenate(less, equal);
+        greater = QuickSort.quickSort(greater);
+        result = QuickSort.catenate(result, greater);
+        return result;
+    }
+
+    /** The main method to test the performace of quick sort algorithm.*/
+    public static void main(String[] args){
+        Queue<Integer> numbers = new Queue<>();
+        numbers.enqueue(7);
+        numbers.enqueue(6);
+        numbers.enqueue(5);
+        numbers.enqueue(4);
+        numbers.enqueue(3);
+        numbers.enqueue(2);
+        numbers.enqueue(1);
+        System.out.println(numbers.toString());
+        Queue<Integer> newNum = QuickSort.quickSort(numbers);
+        System.out.println(newNum.toString());
     }
 }

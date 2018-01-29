@@ -1,8 +1,6 @@
 package hw2;                       
 
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
-import org.omg.CORBA.NO_IMPLEMENT;
-import sun.util.resources.cldr.ga.CurrencyNames_ga;
 
 public class Percolation {
     private WeightedQuickUnionUF N_grid;

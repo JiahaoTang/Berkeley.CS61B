@@ -18,8 +18,7 @@ public class RadixSort
      *
      * @return String[] the sorted array
      **/
-    public static String[] sort(String[] asciis)
-    {
+    public static String[] sort(String[] asciis) {
         return null;
     }
 

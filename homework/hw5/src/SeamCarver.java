@@ -59,12 +59,64 @@ public class SeamCarver {
     }
 
     public int[] findHorizontalSeam(){
-        return null;
+        int[] res = new int[width()];
+        double[][] minEnergy = new double[width()][height()];
+
+        //calculate the sum of minimum energy.
+        for(int i = 0; i < height(); i++){
+            minEnergy[0][i] = energy(0, i);
+        }
+        for(int i = 1; i < width(); i++){
+            for(int j = 0; j < height(); j++){
+                if(j == 0){
+                    minEnergy[i][j] = energy(i, j) + Math.min(minEnergy[i - 1][j], minEnergy[i - 1][j + 1]);
+                }else if(j == height() - 1){
+                    minEnergy[i][j] = energy(i, j) + Math.min(minEnergy[i - 1][j - 1], minEnergy[i - 1][j]);
+                }else{
+                    minEnergy[i][j] = energy(i, j) + Math.min(Math.min(minEnergy[i - 1][j - 1], minEnergy[i - 1][j]), minEnergy[i - 1][j + 1]);
+                }
+            }
+        }
+
+        //reverse the path
+        //find the min total energy in last row
+        double min = Double.MAX_VALUE;
+        for(int i = 0; i < height(); i++){
+            if(minEnergy[width() - 1][i] < min){
+                min = minEnergy[width() - 1][i];
+                res[res.length - 1] = i;
+            }
+        }
+
+        for(int i = width() - 2; i >= 0; i--){
+            if(res[i + 1] - 1 > 0){
+                res[i] = res[i + 1] - 1;
+                if(minEnergy[i][res[i] + 1] < minEnergy[i][res[i]]){
+                    res[i] = res[i + 1];
+                }
+                if(res[i + 1] + 1 < height()){
+                    if(minEnergy[i][res[i + 1] + 1] < minEnergy[i][res[i + 1]]){
+                        res[i] = res[i + 1] + 1;
+                    }
+                }
+            }else{
+                res[i] = res[i + 1];
+                if(res[i + 1] + 1 < height()){
+                    if(minEnergy[i][res[i + 1] + 1] < minEnergy[i][res[i + 1]]){
+                        res[i] = res[i + 1] + 1;
+                    }
+                }
+            }
+        }
+
+        return res;
     }
 
     public int[] findVerticalSeam(){
         int[] res = new int[height()];
-        double[][]  minEnergy = new double[height()][width()];
+        double[][]  minEnergy = new double[width()][height()];
+
+        //calculate the sum of minimum energy.
         for(int i = 0; i < width(); i++){
             minEnergy[i][0] = energy(i, 0);
         }
@@ -79,20 +131,36 @@ public class SeamCarver {
                 }
             }
         }
-        int min = Integer.MAX_VALUE;
+
+        //reverse the path
+        //find the index of min total energy in last row.
+        double min = Double.MAX_VALUE;
         for(int i = 0; i < width(); i++){
             if(minEnergy[i][height() - 1] < min){
+                min = minEnergy[i][height() - 1];
                 res[res.length - 1] = i;
-                break;
             }
         }
+
         for(int i = height() - 2; i >= 0; i--){
-            res[i] = res[i + 1] - 1;
-            if(minEnergy[res[i + 1]][i] < minEnergy[res[i]][i]){
+            if(res[i + 1] - 1 > 0){
+                res[i] = res[i + 1] - 1;
+                if(minEnergy[res[i] + 1][i] < minEnergy[res[i]][i]){
+                    res[i] = res[i + 1];
+                }
+                if(res[i + 1] + 1 < width()){
+                    if(minEnergy[res[i + 1] + 1][i] < minEnergy[res[i]][i]){
+                        res[i] = res[i + 1] + 1;
+                    }
+                }
+            }else{
                 res[i] = res[i + 1];
-            }
-            if(minEnergy[res[i + 1] + 1][i] < minEnergy[res[i]][i]){
-                res[i] = res[i + 1] + 1;
+
+                if(res[i + 1] + 1 < width()){
+                    if(minEnergy[res[i + 1] + 1][i] < minEnergy[res[i]][i]){
+                        res[i] = res[i + 1] + 1;
+                    }
+                }
             }
         }
         return res;
@@ -100,10 +168,10 @@ public class SeamCarver {
     }
 
     public void removeHorizontalSeam(int[] seam){
-
+        pic = SeamRemover.removeHorizontalSeam(pic, seam);
     }
 
     public void removeVerticalSeam(int[] seam){
-
+        pic = SeamRemover.removeVerticalSeam(pic, seam);
     }
 }

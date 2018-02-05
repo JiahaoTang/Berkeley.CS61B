@@ -4,10 +4,12 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class BinaryTrie implements Serializable{
+    public static final long serialVersionUID = 1L;
     PriorityQueue<TreeNode> pq;
     TreeNode root;
 
-    private static class TreeNode implements Comparable{
+    private static class TreeNode implements Comparable, Serializable{
+        public static final long serialUID = 1L;
         char ch;
         int freq;
         TreeNode left;
@@ -34,7 +36,7 @@ public class BinaryTrie implements Serializable{
         }
 
         while(pq.size() > 1){
-            root = new TreeNode('.', 0, null, null);
+            root = new TreeNode('\0', 0, null, null);
             TreeNode left = pq.poll();
             TreeNode right = pq.poll();
             root.left = left;
@@ -47,7 +49,7 @@ public class BinaryTrie implements Serializable{
     public Match longestPrefixMatch(BitSequence querySequence){
         Map<Character, BitSequence> map = buildLookupTable();
         BitSequence longestBS = new BitSequence("");
-        Character symbol = '.';
+        Character symbol = '\0';
         for(Character c: map.keySet()){
             BitSequence cBS = map.get(c);
             int cLen = cBS.length();
@@ -66,10 +68,10 @@ public class BinaryTrie implements Serializable{
     }
 
     private void fillLoopupTable(Map<Character, BitSequence> map, TreeNode tn, String str){
-        if(tn.ch == '.'){
+        if(tn.ch == '\0'){
             fillLoopupTable(map, tn.left, str + "0");
             fillLoopupTable(map, tn.right, str + "1");
-        }else if(tn.ch != '.'){
+        }else if(tn.ch != '\0'){
             map.put(tn.ch, new BitSequence(str));
         }
     }

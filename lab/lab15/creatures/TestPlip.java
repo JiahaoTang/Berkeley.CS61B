@@ -43,7 +43,7 @@ public class TestPlip {
         assertNotSame(p, baby);
     }
 
-    //@Test
+    @Test
     public void testChoose() {
         Plip p = new Plip(1.2);
         HashMap<Direction, Occupant> surrounded = new HashMap<Direction, Occupant>();
@@ -60,6 +60,32 @@ public class TestPlip {
         Action expected = new Action(Action.ActionType.STAY);
 
         assertEquals(expected, actual);
+
+        /*If the energy is bigger than 1.*/
+        Plip p0 = new Plip(1.2);
+        HashMap<Direction, Occupant> surrounded0 = new HashMap<Direction, Occupant>();
+        surrounded0.put(Direction.TOP, new Impassible());
+        surrounded0.put(Direction.BOTTOM, new Empty());
+        surrounded0.put(Direction.LEFT, new Impassible());
+        surrounded0.put(Direction.RIGHT, new Impassible());
+
+        Action actual0 = p0.chooseAction(surrounded0);
+        Action expected0 = new Action(Action.ActionType.STAY);
+
+        assertNotEquals(expected0, actual0);
+
+        /*If the energy is smaller than 1. It will stay.*/
+        Plip p1 = new Plip(0.2);
+        HashMap<Direction, Occupant> surrounded1 = new HashMap<Direction, Occupant>();
+        surrounded1.put(Direction.TOP, new Impassible());
+        surrounded1.put(Direction.BOTTOM, new Empty());
+        surrounded1.put(Direction.LEFT, new Impassible());
+        surrounded1.put(Direction.RIGHT, new Impassible());
+
+        Action actual1 = p1.chooseAction(surrounded1);
+        Action expected1 = new Action(Action.ActionType.STAY);
+
+        assertEquals(expected1, actual1);
     }
 
     public static void main(String[] args) {

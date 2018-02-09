@@ -1,9 +1,6 @@
 package creatures;
-import huglife.Creature;
-import huglife.Direction;
-import huglife.Action;
-import huglife.Occupant;
-import huglife.HugLifeUtils;
+import huglife.*;
+
 import java.awt.Color;
 import java.util.Map;
 import java.util.List;
@@ -91,7 +88,24 @@ public class Plip extends Creature {
      *  for an example to follow.
      */
     public Action chooseAction(Map<Direction, Occupant> neighbors) {
-        return new Action(Action.ActionType.STAY);
+        List<Direction> empties = getNeighborsOfType(neighbors, "empty");
+        List<Direction> cloruses = getNeighborsOfType(neighbors, "clorus");
+        if(empties.size() == 0){
+            return new Action(Action.ActionType.STAY);
+        }else if(energy() > 1){
+            int flag = HugLifeUtils.randomInt(0, empties.size() - 1);
+            return new Action(Action.ActionType.REPLICATE, empties.get(flag));
+        }else if(cloruses.size() > 0){
+            int flag = HugLifeUtils.randomInt(0, 1);
+            if(flag == 0){
+                int moveFlag = HugLifeUtils.randomInt(0, empties.size() - 1);
+                return new Action(Action.ActionType.MOVE, empties.get(moveFlag));
+            }else {
+                return new Action(Action.ActionType.STAY);
+            }
+        }else{
+            return new Action(Action.ActionType.STAY);
+        }
     }
 
 }

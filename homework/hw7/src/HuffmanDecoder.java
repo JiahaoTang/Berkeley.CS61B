@@ -11,7 +11,7 @@ public class HuffmanDecoder {
         char[] list = new char[(int)size];
         for(int i = 0; i < (int)size; i++){
             Match mc = ((BinaryTrie)trie).longestPrefixMatch(bitSequence);
-            list[i] = mc.getymbol();
+            list[i] = mc.getSymbol();
             bitSequence = bitSequence.allButFirstNBits(mc.getSequence().length());
         }
         FileUtils.writeCharArray(args[1], list);

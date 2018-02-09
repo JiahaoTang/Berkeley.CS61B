@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class SampleCreature extends Creature {
     /** red color. */
-    private int r = 155;
+    private int r = 255;
     /** green color. */
     private int g = 61;
     /** blue color. */

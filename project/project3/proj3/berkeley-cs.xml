@@ -11,7 +11,7 @@
         <tag k="Pain" v="0"/>
         <tag k="No" v="Limit"/>
     </course>
-    <course id="CS 61C " division="lower" version="1">
+    <course id="CS 61C" division="lower" version="1">
         <tag k="Pain" v="Integer Overflow"/>
     </course>
     <course id="CS 70" division="lower" version="1">

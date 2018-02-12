@@ -28,7 +28,7 @@ import static spark.Spark.*;
  * This code is using BearMaps skeleton code version 2.0.
  * @author Alan Yao, Josh Hug
  */
-public class  MapServer {
+public class MapServer {
     /**
      * The root upper left/lower right longitudes and latitudes represent the bounding box of
      * the root tile, as the images in the img/ folder are scraped.

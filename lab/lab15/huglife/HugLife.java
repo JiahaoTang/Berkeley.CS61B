@@ -120,8 +120,8 @@ public class HugLife {
             switch (creature) {
                 //Uncomment this when you're ready to test out your clorus class
                 case "clorus":
-                     h.addCreature(x, y, new Clorus(1));
-                     break;
+	                h.addCreature(x, y, new Clorus(1));
+	                break;
                 case "plip":
                     h.addCreature(x, y, new Plip());
                     break;

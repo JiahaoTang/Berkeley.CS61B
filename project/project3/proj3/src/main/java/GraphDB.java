@@ -18,9 +18,9 @@ import java.lang.Long;
  * @author Alan Yao, Josh Hug
  */
 public class GraphDB {
-    private final Map<Long, Node> nodes = new HashMap<>();
-    private final Map<Long, Way> ways = new HashMap<>();
-    private final Map<Long, Relation> relations = new HashMap<>();
+    public final Map<Long, Node> nodes = new HashMap<>();
+    public final Map<Long, Way> ways = new HashMap<>();
+    public final Map<Long, Relation> relations = new HashMap<>();
 
     /** Your instance variables for storing the graph. You should consider
      * creating helper classes, e.g. Node, Edge, etc. */
@@ -29,7 +29,7 @@ public class GraphDB {
         Long id;
         double lat;
         double lon;
-        Map<Long, String> extraInfo;
+        Map<String, String> extraInfo;
 
         Node(Long id, double lon, double lat){
             this.id = id;
@@ -41,7 +41,7 @@ public class GraphDB {
     /*Way class is used for storing ways in the map.*/
     static class Way{
         Long id;
-        Set<Node> nodeSet;
+        Set<Long> nodeSet;
         Map<String, String> extraInfo;
 
         Way(Long id){
@@ -50,7 +50,6 @@ public class GraphDB {
             extraInfo = new HashMap<>();
         }
     }
-
     /*Relation class is used for storint relationships in the map.*/
     static class Relation{
         Long id;
@@ -83,6 +82,14 @@ public class GraphDB {
         clean();
     }
 
+    public void addNode(Node node){
+        nodes.put(node.id, node);
+    }
+
+    public void addWay(Way way){
+        ways.put(way.id, way);
+    }
+
     /**
      * Helper to process strings into their "cleaned" form, ignoring punctuation and capitalization.
      * @param s Input string.
@@ -99,32 +106,35 @@ public class GraphDB {
      */
     private void clean() {
         // TODO: Your code here.
-        Set<Node> connectedNodes = new HashSet<>();
+        Set<Long> connectedNodes = new HashSet<>();
         for(Long wayId:ways.keySet()){
-            for(Node node:ways.get(wayId).nodeSet){
-                connectedNodes.add(node);
+            for(Long nodeId:ways.get(wayId).nodeSet){
+                connectedNodes.add(nodeId);
             }
         }
+//        System.out.println("Nodes size is " + nodes.size());
+//        System.out.println("Ways size is " + ways.size());
+        /*
         for(Long relationId:relations.keySet()){
             for(Node node:relations.get(relationId).nodeMembers.keySet()){
-                connectedNodes.add(node);
+                connectedNodes.add(node.id);
             }
-        }
+        }*/
+        HashMap<Long,Node> newNodes = new HashMap<>();
+//        System.out.println("Connected set size is " + connectedNodes.size());
         for(Long nodeId: nodes.keySet()){
-            if(!connectedNodes.contains(nodes.get(nodeId))){
-                nodes.remove(nodeId);
+            if(connectedNodes.contains(nodeId)){
+                newNodes.put(nodeId, nodes.get(nodeId));
             }
         }
+        nodes.clear();
+        nodes.putAll(newNodes);
     }
 
     /** Returns an iterable of all vertex IDs in the graph. */
     Iterable<Long> vertices() {
         //TODO: YOUR CODE HERE, this currently returns only an empty list.
-        ArrayList<Long> res = new ArrayList<>();
-        for(Long vId : nodes.keySet()){
-            res.add(vId);
-        }
-        return res;
+        return nodes.keySet();
     }
 
     /** Returns ids of all vertices adjacent to v. */
@@ -137,7 +147,7 @@ public class GraphDB {
     double distance(long v, long w) {
         Node nodeV = nodes.get(v);
         Node nodeW = nodes.get(w);
-        return Math.sqrt(Math.pow(nodeV.lat - nodeW.lat, 2) + Math.pow(nodeV.lon - nodeW.lon, 2));
+        return Math.sqrt(Math.pow(nodeV.lat * 364000 - nodeW.lat * 364000, 2) + Math.pow(nodeV.lon * 288000 - nodeW.lon * 288000, 2));
     }
 
     /** Returns the vertex id closest to the given longitude and latitude. */
@@ -145,7 +155,7 @@ public class GraphDB {
         double minDis = Double.MAX_VALUE;
         long res = 1L;
         for(Long nodesId : nodes.keySet()){
-            double dis = Math.sqrt(Math.pow(lat - nodes.get(nodesId).lat, 2) + Math.pow(lon - nodes.get(nodesId).lon, 2));
+            double dis = Math.sqrt(Math.pow(lat * 364000 - nodes.get(nodesId).lat * 364000, 2) + Math.pow(lon * 288000 - nodes.get(nodesId).lon * 288000, 2));
             if(dis < minDis){
                 minDis = dis;
                 res = nodesId;
